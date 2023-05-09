@@ -293,76 +293,7 @@ void CURRENT()
 
 
 
-void CHECKIN_MENU()
-{
-    system("cls");
-    char ch;
-    while (1)
-    {
-        system("cls");
-        int width = 50;
-        int height = 9;
-        int startX = 25;
-        int startY = 3;
-        int menuTitleWidth = 22;
-        int menuTitleX = startX + (width - menuTitleWidth) / 2;
-        int menuTitleY = startY + 1;
-        int borderColour = 9;
 
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), borderColour);
-        gotoxy(startX, startY);
-        cout << char(201);
-        for (int i = 0; i < width; i++)
-            cout << char(205);
-        cout << char(187) << endl;
-
-        gotoxy(menuTitleX, menuTitleY + 1);
-        cout << char(179) << " SELECT TYPE OF BOOKING " << char(179);
-        gotoxy(menuTitleX, menuTitleY + 2);
-
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
-        gotoxy(startX + 2, startY + 4);
-        cout << "1. CURRENT BOOKING";
-        gotoxy(startX + 2, startY + 5);
-        cout << "2. ADVANCE BOOKING";
-        gotoxy(startX + 2, startY + 6);
-        cout << "3. RETURN";
-
-        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), borderColour);
-        gotoxy(startX, startY + height - 1);
-        cout << char(200);
-        for (int i = 0; i < width; i++)
-            cout << char(205);
-        cout << char(188);
-
-        for (int i = startY + 1; i < startY + height - 1; i++)
-        {
-            gotoxy(startX, i);
-            cout << char(186);
-            gotoxy(startX + width + 1, i);
-            cout << char(186);
-        }
-
-        gotoxy(startX + width / 2 - 8, startY + height);
-        cout << "ENTER YOUR CHOICE:";
-        ch = getche();
-        switch (ch)
-        {
-        case '1':
-            system("cls");
-            CURRENT();
-            getch();
-            break;
-        case '2':
-            system("cls");
-            ADVANCE();
-            getch();
-            break;
-        case '3':
-            return;
-        }
-    }
-}
 void ADVANCE()
 {
     system("cls");
@@ -468,7 +399,76 @@ void ADVANCE()
     }
     fout.close();
 }
+void CHECKIN_MENU()
+{
+    system("cls");
+    char ch;
+    while (1)
+    {
+        system("cls");
+        int width = 50;
+        int height = 9;
+        int startX = 25;
+        int startY = 3;
+        int menuTitleWidth = 22;
+        int menuTitleX = startX + (width - menuTitleWidth) / 2;
+        int menuTitleY = startY + 1;
+        int borderColour = 9;
 
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), borderColour);
+        gotoxy(startX, startY);
+        cout << char(201);
+        for (int i = 0; i < width; i++)
+            cout << char(205);
+        cout << char(187) << endl;
+
+        gotoxy(menuTitleX, menuTitleY + 1);
+        cout << char(179) << " SELECT TYPE OF BOOKING " << char(179);
+        gotoxy(menuTitleX, menuTitleY + 2);
+
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 7);
+        gotoxy(startX + 2, startY + 4);
+        cout << "1. CURRENT BOOKING";
+        gotoxy(startX + 2, startY + 5);
+        cout << "2. ADVANCE BOOKING";
+        gotoxy(startX + 2, startY + 6);
+        cout << "3. RETURN";
+
+        SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), borderColour);
+        gotoxy(startX, startY + height - 1);
+        cout << char(200);
+        for (int i = 0; i < width; i++)
+            cout << char(205);
+        cout << char(188);
+
+        for (int i = startY + 1; i < startY + height - 1; i++)
+        {
+            gotoxy(startX, i);
+            cout << char(186);
+            gotoxy(startX + width + 1, i);
+            cout << char(186);
+        }
+
+        gotoxy(startX + width / 2 - 8, startY + height);
+        cout << "ENTER YOUR CHOICE:";
+        ch = getche();
+        switch (ch)
+        {
+        case '1':
+            system("cls");
+            CURRENT();
+            getch();
+            break;
+        case '2':
+            system("cls");
+            ADVANCE();
+            getch();
+            break;
+        case '3':
+            return;
+        }
+    }
+}
 void R_MODIFY_FORAVL(int); //Forward declaration
 void C_DELETE(int);       //Forward declaration
 
@@ -483,7 +483,7 @@ void CHECKOUT()
     }
     cout << "\n";
     gotoxy(33, 2);
-    cout << "\033[1;32mCOMFORT INN HOTEL\033[0m";
+    cout << "\033[1;32mRoomZoo HOTEL\033[0m";
     cout << "\n";
     for (int i = 0; i < 80; i++)
     {
