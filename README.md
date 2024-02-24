@@ -11,7 +11,7 @@ The RoomZoo is an automated room management system that can be used for hotel ma
 ## 🖥️ System Requirements
 
 * Operating System: Windows, Linux, Mac OS
-* System Requirements: C++ compiler
+* System Requirements: C++ compiler    
 * Programming Language: C++
 
 ## 💽 Installation
